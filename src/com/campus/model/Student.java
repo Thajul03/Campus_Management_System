@@ -27,32 +27,32 @@ public class Student {
     public int getStudentid(){
         return studentid;
     }
-    public int getStudentname(){
+    public String getStudentname(){
         return studentname;
     }
     public int getAge(){
         return age;
     }
-    public int getDepartment(){
+    public String getDepartment(){
         return department;
     }
-    public int getMarks(){
+    public int[] getMarks(){
         return marks;
     }
     //setters
     public void setStudentid(int studentid){
         this.studentid=studentid;
     }
-    public void setStudentname(int studentname){
-        this.studentnmae=studentname;
+    public void setStudentname(String studentname){
+        this.studentname=studentname;
     }
     public void setAge(int age){
         this.age=age;
     }
-    public void setDepartment(int department ){
+    public void setDepartment(String department ){
         this.department=department;
     }
-    public void setMarks(int marks){
+    public void setMarks(int[] marks){
         this.marks=marks;
     }
     //istance methods-belong to object
