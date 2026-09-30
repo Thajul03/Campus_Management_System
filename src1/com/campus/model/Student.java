@@ -1,76 +1,90 @@
 package com.campus.model;
 
-public class Student {
-    //Encapsulation-data hiding
-    //Instance varaiables
+import com.campus.contract.StudentOperations;
+
+public abstract class Student  implements  StudentOperations {
+    //Encapsulation - data hiding
+    // instance variables
     private int studentid;
     private String studentname;
     private int age;
     private String department;
     private int[] marks;
-    //Static variables
-    static int studentcount=0;
-    //Default constructor
-    public Student(){
-        studentcount++;
+    
+    // static variables
+    static int studentCount=0;
+
+    // Default constructor
+    public Student() {
+        studentCount++;
     }
-    //parameterized constructor
-    public Student(int studentid,String studentname,int age,String department,int[] marks){
-        this.studentid=studentid;
-        this.studentname=studentname;
-        this.age=age;
-        this.department=department;
-        this.marks=marks;
-        studentcount++;
+
+    // parameterized constructor
+    public Student(int studentid, String studentname, int age, String department, int[] marks) {
+        this.studentid = studentid;
+        this.studentname = studentname;
+        this.age = age;
+        this.department = department;
+        this.marks = marks;
+        studentCount++;
     }
-    //getters
-    public int getStudentid(){
+    //getters - methods to access the instance variables
+    public int getStudentid() {
         return studentid;
     }
-    public String getStudentname(){
+    public String getStudentname() {
         return studentname;
     }
-    public int getAge(){
+    public int getAge() {
         return age;
     }
-    public String getDepartment(){
+    public String getDepartment() {
         return department;
     }
-    public int[] getMarks(){
+    public int[] getMarks() {
         return marks;
     }
-    //setters
-    public void setStudentid(int studentid){
-        this.studentid=studentid;
+    //setters - methods to modify the instance variables
+    public void setStudentid(int studentid) {
+        this.studentid = studentid;
     }
-    public void setStudentname(String studentname){
-        this.studentname=studentname;
+    public void setStudentname(String studentname) {
+        this.studentname = studentname;
     }
-    public void setAge(int age){
-        this.age=age;
+    public void setAge(int age) {
+        this.age = age;
     }
-    public void setDepartment(String department ){
-        this.department=department;
+    public void setDepartment(String department) {
+        this.department = department;
     }
-    public void setMarks(int[] marks){
-        this.marks=marks;
+    public void setMarks(int[] marks) {
+        this.marks = marks;
     }
-    //istance methods-belong to object
-    public void displaystudentInfo(){
-        System.out.println("Student ID:"+studentid);
-        System.out.println("Student Name:"+studentname);
-        System.out.println("Age:"+age);
-        System.out.println("Deparatment:"+department);
-    }
-    public void displaystudentInfo(boolean showMarks){
-        displaystudentInfo();
 
-        if(showMarks){
-            System.out.println("Marks:"+java.util.Arrays.toString(marks));
+    //instance methods - belongs to object
+    public void displayStudentInfo() {
+        System.out.println("Student ID: " + studentid);
+        System.out.println("Student Name: " + studentname);
+        System.out.println("Age: " + age);
+        System.out.println("Department: " + department);
+    }
+
+    public void displayStudentInfo(boolean showMarks) {
+        displayStudentInfo();
+
+        if (showMarks) {
+            System.out.println("Marks: " + java.util.Arrays.toString(marks));
         }
     }
-    //static method-belongs to class,not to object
-    public static void displayStudentcount(){
-        System.out.println("Total number of student:"+ studentcount);
+    
+    //abstract method
+    public abstract void studentType();
+
+    //interface methods
+    
+    
+    // static method-belongs to class, not to object
+    public static void displayStudentCount() {
+        System.out.println("Total number of students: " + studentCount);
     }
 }
